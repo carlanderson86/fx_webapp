@@ -21,8 +21,8 @@ There is a version of the gem in the zip provided.
 
 * Application Setup (Development)
     * Setup ENV Variables
-        * DATABASE_USER
-        * DATABASE_PASSWORD
+        * FX_WEBAPP_DATABASE_USER
+        * FX_WEBAPP_DATABASE_USER
     * Run the below commands in terminal
         * bundle install
         * rake db:create
@@ -34,8 +34,8 @@ There is a version of the gem in the zip provided.
 * Application Setup (Production)
     * Setup ENV Variables
         * SECRET_KEY_BASE
-        * DATABASE_USER
-        * DATABASE_PASSWORD
+        * FX_WEBAPP_DATABASE_USER
+        * FX_WEBAPP_DATABASE_USER
     * Run the below commands in terminal
         * bundle install
         * RAILS_ENV=production rake db:create
