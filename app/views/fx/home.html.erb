@@ -1,0 +1,47 @@
+<div class="container">
+
+  <div class="col-xs-12">
+    <h4 class="header">FX-u-like</h4>
+  </div>
+  <div class="col-xs-12">
+    <input class="form-control" type="date" name="date" value="<%= Date.today %>" />
+  </div>
+
+  <div class="col-xs-6">
+    <input class="form-control" type="number" step="any" name="value" value="1.00" />
+  </div>
+  <div class="col-xs-6">
+      <select class="select form-control" name="source_currency">
+        <% @currencies.each do |currency| %>
+          <option value="<%= currency[:id] %>"><%= currency[:text] %></option>
+        <% end %>
+      </select>
+      <select class="select form-control" name="target_currency">
+        <% @currencies.each do |currency| %>
+            <option value="<%= currency[:id] %>"><%= currency[:text] %></option>
+        <% end %>
+      </select>
+  </div>
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-success form-control convert-btn">Convert</button>
+  </div>
+  <div class="success-div hidden">
+  <hr/>
+  <div class="col-xs-6">
+    <h4>Exchange Rate: <span class="exchange_rate">0.00</span></h4>
+  </div>
+  <div class="col-xs-6">
+    <h4>Converted Value: <span class="converted_value">0.00</span></h4>
+  </div>
+  </div>
+  <div class="error-div hidden">
+    <h4 class="form-control error-message" style="color:red"></h4>
+  </div>
+</div>
+
+<script type="application/javascript">
+    $("select").select2({dropdownCssClass: 'dropdown-inverse'});
+
+    $(".convert-btn").off("click").on("click",Convert.beginConversion);
+
+</script>

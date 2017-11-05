@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+FX Application
 
-Things you may want to cover:
+#### Assumptions / Limitations
 
-* Ruby version
+* Currently runs using one base currency at the moment, can be configured
+
+#### Below are the requirements for the system running this application
 
 * System dependencies
+    * MySQL 5.7
+    * Rails 5.1.4 
+    * Ruby 2.4.2
 
-* Configuration
+* Application Setup (Development)
+    * Setup ENV Variables
+        * DATABASE_USER
+        * DATABASE_PASSWORD
+    * Run the below commands in terminal
+        * bundle install
+        * rake db:create
+        * rake railties:install:migrations
+        * rake db:migrate db:seed
+    * Start the server
+        * rails s Puma
+    
+* Application Setup (Production)
+    * Setup ENV Variables
+        * SECRET_KEY_BASE
+        * DATABASE_USER
+        * DATABASE_PASSWORD
+    * Run the below commands in terminal
+        * bundle install
+        * RAILS_ENV=production rake db:create
+        * RAILS_ENV=production rake railties:install:migrations
+        * RAILS_ENV=production rake db:migrate db:seed
+        * RAILS_ENV=production bundle exec rake assets:precompile
+    * Start the server
+        * rails s Puma -e production
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

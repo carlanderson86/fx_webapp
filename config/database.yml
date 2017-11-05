@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: <%= ENV['FX_WEBAPP_DATABASE_USER'] %>
+  password: <%= ENV['FX_WEBAPP_DATABASE_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: fx_webapp_production
-  username: fx_webapp
+  username: <%= ENV['FX_WEBAPP_DATABASE_USER'] %>
   password: <%= ENV['FX_WEBAPP_DATABASE_PASSWORD'] %>
