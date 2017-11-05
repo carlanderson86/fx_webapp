@@ -4,18 +4,24 @@
     <h4 class="header">FX-u-like</h4>
   </div>
   <div class="col-xs-12">
+    <label>Date:</label>
     <input class="form-control" type="date" name="date" value="<%= Date.today %>" />
   </div>
 
   <div class="col-xs-6">
+    <label>Amount:</label>
     <input class="form-control" type="number" step="any" name="value" value="1.00" />
   </div>
-  <div class="col-xs-6">
+  <div class="col-xs-3">
+      <label>From:</label>
       <select class="select form-control" name="source_currency">
         <% @currencies.each do |currency| %>
           <option value="<%= currency[:id] %>"><%= currency[:text] %></option>
         <% end %>
       </select>
+  </div>
+  <div class="col-xs-3">
+      <label>To:</label>
       <select class="select form-control" name="target_currency">
         <% @currencies.each do |currency| %>
             <option value="<%= currency[:id] %>"><%= currency[:text] %></option>
