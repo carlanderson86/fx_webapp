@@ -2,6 +2,12 @@
 
 FX Application
 
+The FX gem can be installed by running:
+gem install [path to fx gem]
+
+There is a version of the gem in the zip provided.
+
+
 #### Assumptions / Limitations
 
 * Currently runs using one base currency at the moment, can be configured
